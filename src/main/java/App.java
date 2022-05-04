@@ -1,5 +1,8 @@
-import static spark.Spark.port;
-import static spark.Spark.staticFileLocation;
+import spark.template.handlebars.HandlebarsTemplateEngine;
+
+import java.util.HashMap;
+
+import static spark.Spark.*;
 
 public class App {
     public static void main(String[] args) {
@@ -16,6 +19,10 @@ public class App {
         port(port);
 
         staticFileLocation("/public/");
+
+        get("/",((request, response) ->  {
+            return modelAndView(new HashMap<>(), "index.hbs");
+        }), new HandlebarsTemplateEngine());
 
 
 
