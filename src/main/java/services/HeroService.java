@@ -8,7 +8,7 @@ import java.util.List;
 public class HeroService {
     private List <Hero> heroList = new ArrayList<>();
 
-    public void addHero(List<Hero>myHeroes, Hero hero) {
+    public void addHero(List<Hero> myHeroes, Hero hero) {
         if (myHeroes !=null){
             heroList = myHeroes;
         }
