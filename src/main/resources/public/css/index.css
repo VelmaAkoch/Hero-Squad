@@ -17,7 +17,7 @@
 }
 
 #background{
-    background-image: url(https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.amazon.in%2FSuper-Hero-Squad-Vol-Marvel-ebook%2Fdp%2FB07GDVGDQD&psig=AOvVaw1Vz9TfmuUoX75DnRmeHfc0&ust=1651786767787000&source=images&cd=vfe&ved=0CAwQjRxqFwoTCICxtMLnxvcCFQAAAAAdAAAAABAK);
+    background-image: url('images/Hero.jpg');
     background-repeat: no-repeat;
     background-size: cover;
 }
