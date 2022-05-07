@@ -41,7 +41,7 @@ public class App {
         }),new HandlebarsTemplateEngine());
 
 
-        post("/hero-new/new", ((request, response) -> {
+        post("/hero/new", ((request, response) -> {
             Map<String,Object> data = new HashMap<>();
 
             String name = request.queryParams("hero");
@@ -81,8 +81,7 @@ public class App {
             SquadService squadService = new SquadService();
             squadService.addSquad(squadList, squad);
 
-            List<Squad> updatedSquad = squadService.getSquadList();
-            boolean updatedSquadList = false;
+            List<Squad> updatedSquadList = squadService.getSquadList();
             request.session().attribute("Squads", updatedSquadList);
             System.out.println(updatedSquadList);
 

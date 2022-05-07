@@ -1,6 +1,7 @@
 package services;
 
 import models.Squad;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -10,15 +11,13 @@ public class SquadService {
     public void addSquad( List <Squad> mySquad, Squad squad){
         if (mySquad != null){
             squadList = mySquad;
-        }
-        else
-        {
+        } else {
             mySquad = new ArrayList<>();
         }
         squad.setId(squadList.size()+1);
         squadList.add(squad);
     }
-    public List<Squad> getSquadList() {
+    public List<Squad>getSquadList(){
         return squadList;
     }
 }

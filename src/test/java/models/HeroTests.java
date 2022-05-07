@@ -4,8 +4,6 @@ import org.junit.jupiter.api.Test;
 import models.Hero;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-
-
 public class HeroTests {
     @Test
     public void all_returnsAllProperties_true(){
