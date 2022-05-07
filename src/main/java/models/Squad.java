@@ -1,7 +1,5 @@
 package models;
 
-import java.security.PrivateKey;
-
 public class Squad {
     private  String maxSize;
     private  String squadName;

@@ -4,6 +4,7 @@ import org.junit.jupiter.api.Test;
 import models.Squad;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
+
 public class SquadTests {
     @Test
     public void all_returnsAllProperties_true() {

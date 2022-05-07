@@ -1,20 +1,21 @@
 package services;
 
 import models.Hero;
-
 import java.util.ArrayList;
 import java.util.List;
 
 public class HeroService {
-    private List<Hero> heroList = new ArrayList<>();
+    private List <Hero> heroList = new ArrayList<>();
 
         public void addHero(List<Hero> myHeroes, Hero hero) {
             if (myHeroes != null) {
                 heroList = myHeroes;
-            } else {
+            }
+            else
+            {
                 myHeroes = new ArrayList<>();
             }
-            hero.setHeroId(heroList.size() + 1);
+            hero.setHeroId(heroList.size()+1);
             heroList.add(hero);
         }
 

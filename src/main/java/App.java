@@ -40,8 +40,8 @@ public class App {
             return modelAndView(new HashMap<>(), "squad.hbs");
         }),new HandlebarsTemplateEngine());
 
-        //post a new hero
-        post("/hero/new", ((request, response) -> {
+
+        post("/hero-new/new", ((request, response) -> {
             Map<String,Object> data = new HashMap<>();
 
             String name = request.queryParams("hero");
@@ -50,53 +50,43 @@ public class App {
             String weakness = request.queryParams("weakness");
             List<Hero>heroList = request.session().attribute("Heroes");
 
-
             Hero hero = new Hero(name,age,specialPower,weakness);
-            HeroService heroservice=new HeroService();
+            HeroService heroService=new HeroService();
 
-
-            HeroService heroService = null;
             heroService.addHero(heroList, hero);
             List <Hero> updatedList = heroService.getHeroList();
             request.session().attribute("Heroes", updatedList);
             System.out.println(updatedList);
 
-
             data.put("Heroes", request.session().attribute("Heroes"));
             return new ModelAndView(data, "hero-new-hbs");
         }), new HandlebarsTemplateEngine());
 
-        //get new heroes list template
         get("/hero/new", ((request, response) -> {
             Map<String,Object> data = new HashMap<>();
             data.put("Heroes", request.session().attribute("yourHeroList"));
             return new ModelAndView(data, "hero-new.hbs");
-
         }), new HandlebarsTemplateEngine());
 
 
         post("/squad/new", ((request, response) -> {
             Map<String,Object> data = new HashMap<>();
 
-
             String name = request.queryParams("squad");
             String maxSize = request.queryParams("size");
             String squadCause = request.queryParams("task");
             List <Squad> squadList = request.session().attribute("Squads");
 
-
             Squad squad = new Squad(maxSize, name, squadCause);
             SquadService squadService = new SquadService();
             squadService.addSquad(squadList, squad);
 
-
             List<Squad> updatedSquad = squadService.getSquadList();
             boolean updatedSquadList = false;
-            request.session().attribute("Squad", updatedSquadList);
+            request.session().attribute("Squads", updatedSquadList);
             System.out.println(updatedSquadList);
 
-            //add key-key value data to map for displaying to the template
-            data.put("Squad", request.session().attribute("Squad"));
+            data.put("Squads", request.session().attribute("Squads"));
             return new ModelAndView(data, "squad-new.hbs");
         }),new HandlebarsTemplateEngine());
 
