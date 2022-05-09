@@ -1,8 +1,9 @@
 package models;
 
-import org.junit.jupiter.api.Test;
-import models.Squad;
-import static org.junit.jupiter.api.Assertions.assertEquals;
+
+import org.junit.Test;
+
+import static org.junit.Assert.assertEquals;
 
 public class SquadTests {
     @Test
